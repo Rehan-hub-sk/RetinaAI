@@ -39,7 +39,7 @@ model.eval()
 
 
 transform = transforms.Compose([
-    transforms.Resize((1024, 1024)),
+    transforms.Resize((512, 512)),
     transforms.ToTensor()
 ])
 
@@ -50,7 +50,7 @@ def predict_image(image_bytes):
         io.BytesIO(image_bytes)
     ).convert("RGB")
 
-    resized_image = image.resize((1024, 1024))
+    resized_image = image.resize((512, 512))
 
     input_tensor = transform(image)
     input_tensor = input_tensor.unsqueeze(0).to(DEVICE)
