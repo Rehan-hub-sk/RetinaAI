@@ -3,6 +3,7 @@ import os
 import base64
 
 import torch
+torch.set_num_threads(1)
 import numpy as np
 from PIL import Image
 from torchvision import models, transforms
